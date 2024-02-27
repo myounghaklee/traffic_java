@@ -4,6 +4,7 @@ import com.fastcampus.boardserver.aop.LoginCheck;
 import com.fastcampus.boardserver.dto.CategoryDTO;
 import com.fastcampus.boardserver.service.impl.CategoryServiceImpl;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -12,12 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/catagories")
 @Log4j2
+@RequiredArgsConstructor
 public class CategoryController {
-    private CategoryServiceImpl categoryService;
-
-    public CategoryController(CategoryServiceImpl categoryService) {
-        this.categoryService = categoryService;
-    }
+    private final CategoryServiceImpl categoryService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

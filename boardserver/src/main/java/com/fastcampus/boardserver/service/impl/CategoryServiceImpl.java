@@ -3,15 +3,17 @@ package com.fastcampus.boardserver.service.impl;
 import com.fastcampus.boardserver.dto.CategoryDTO;
 import com.fastcampus.boardserver.mapper.CategoryMapper;
 import com.fastcampus.boardserver.service.CategoryService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
     @Autowired
-    private CategoryMapper categoryMapper;
+    private final CategoryMapper categoryMapper;
 
     @Override
     public void register(String accountId, CategoryDTO categoryDTO) {
