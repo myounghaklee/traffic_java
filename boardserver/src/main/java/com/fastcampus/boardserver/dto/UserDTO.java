@@ -1,5 +1,6 @@
 package com.fastcampus.boardserver.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -17,8 +18,11 @@ public class UserDTO {
     private String userId;
     private String password;
     private String nickName;
+    @JsonProperty("is_admin")
     private boolean isAdmin;
     private Date createTime;
+
+    @JsonProperty("is_with_draw")
     private boolean isWithDraw;
     private Status status;
     private Date updateTime;
