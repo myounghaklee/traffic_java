@@ -10,6 +10,15 @@ version = '0.0.1-SNAPSHOT'
 java {
     sourceCompatibility = '21'
 }
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}
+
 
 configurations {
     compileOnly {
